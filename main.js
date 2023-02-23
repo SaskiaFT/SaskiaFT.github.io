@@ -126,11 +126,29 @@ function playQuiz() {
   function CheckRiddleAnswer() {
     const correctAnswer = "castle shadow"; //add multiple right answers!!!!!!!!
     const userInput = document.getElementById("userInput").value;
-    const messageElement = document.getElementById("message");
+    const messageElement = document.getElementById("riddleMessage");
     
     if (userInput.toLowerCase() === correctAnswer) {
-      messageElement.textContent = "Congratulations, you answered correctly! You may find your first Quest in the Bed Chamber. The first number is 5 ;)";
+      messageElement.textContent = `Congratulations, you answered correctly! 
+      You may find your first Quest in the Bed Chamber.\n\n\n
+      When you have figured out the answer, please fill it in below.\n
+      The first number is 5 ;)`;
     } else {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
   }
+
+  // function CheckPuzzleAnswer() {
+  //   const correctAnswer = "castle shadow"; //add multiple right answers!!!!!!!!
+  //   const userInput = document.getElementById("inputNumberPuzzle").value;
+  //   const messageElement = document.getElementById("puzzleMessage");
+    
+  //   if (userInput.toLowerCase() === correctAnswer) {
+  //     messageElement.textContent = `Congratulations, you answered correctly! 
+  //     You may find your first Quest in the Bed Chamber.\n\n\n
+  //     When you have figured out the answer, please fill it in below.\n
+  //     The first number is 5 ;)`;
+  //   } else {
+  //     messageElement.textContent = "Sorry, that's incorrect. Please try again.";
+  //   }
+  // }

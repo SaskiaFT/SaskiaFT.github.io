@@ -82,6 +82,38 @@ span1 {
 	}
 
 .continue-button {
+	background-color: #ea4c81;
+	border-radius: 8px;
+	border-style: none;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Cinzel, Serif;
+	font-size: 14px;
+	font-weight: 500;
+	height: 40px;
+	line-height: 20px;
+	list-style: none;
+	margin: 0;
+	outline: none;
+	padding: 10px 16px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	transition: color 100ms;
+	vertical-align: baseline;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.continue-button,
+.continue-button {
+	background-color: #f89dc0;
+}
+
+/* .continue-button {
 	background-color: pink;
 	border: 2px solid #CD853F;
 	color: #FFF;
@@ -102,9 +134,32 @@ span1 {
 
 	form {
 	margin-bottom: 20px;
-	}
+	} */
 
-.submit-button {
+	.submit-button {
+	  background-color: rgb(65, 64, 64);
+	  border-radius: 8px;
+	  border-width: 0;
+	  color: white;
+	  cursor: pointer;
+	  display: inline-block;
+	  font-family: Fauna One;
+	  font-size: 14px;
+	  font-weight: 500;
+	  line-height: 20px;
+	  list-style: none;
+	  margin: 0;
+	  padding: 10px 12px;
+	  text-align: center;
+	  transition: all 200ms;
+	  vertical-align: baseline;
+	  white-space: nowrap;
+	  user-select: none;
+	  -webkit-user-select: none;
+	  touch-action: manipulation;
+	}
+	
+/* .submit-button {
 	background-color: blue;
 	border: 2px solid #CD853F;
 	color: #FFF;
@@ -125,7 +180,7 @@ span1 {
 
 	form {
 	margin-bottom: 20px;
-	}
+	} */
 
 
 #showSection1btn {
