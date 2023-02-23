@@ -1,30 +1,3 @@
-// Print text delayed but first check if the element is visible before starting the text printing.
-// offsetParent property of the element to check if it is visible. If the offsetParent is null, the element is not displayed, so the function does not start printing the text. Once the element is visible, 
-// the function begins printing the text.
-function printDelayedTextDelayed(text, elementId, delay) {
-  const element = document.getElementById(elementId);
-  if (!element) {
-    console.error(`Element with id '${elementId}' not found.`);
-    return;
-  }
-  let i = 0;
-  const intervalId = setInterval(function() {
-    if (element.offsetParent !== null && i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-    } else if (i >= text.length) {
-      clearInterval(intervalId);
-    }
-  }, delay);
-}
-
-// Plays audio trol song
-function playTrolsong() {
-  console.log("myFunction was called!");
-  var audio = document.getElementById("trolSong");
-  audio.play();
-}
-
 // Show delayed text and when it is finished show new section
 function showDelayedText(text, delay, callback) {
   var element = document.getElementById("introduction-text");
@@ -50,17 +23,39 @@ function showSection3() {
   section.style.display = "block";
 }
 
-// When button is clicked "Click here to continue onwards" this functionallity displays section 2
-// function showSection2() {
-//   const section2 = document.getElementById("section-2");
-//   section2.style.display = "block";
-// }
+// Print text delayed but first check if the element is visible before starting the text printing.
+// offsetParent property of the element to check if it is visible. If the offsetParent is null, the element is not displayed, so the function does not start printing the text. Once the element is visible, 
+// the function begins printing the text.
+function printDelayedTextDelayed(text, elementId, delay) {
+  const element = document.getElementById(elementId);
+  if (!element) {
+    console.error(`Element with id '${elementId}' not found.`);
+    return;
+  }
+  let i = 0;
+  const intervalId = setInterval(function() {
+    if (element.offsetParent !== null && i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+    } else if (i >= text.length) {
+      clearInterval(intervalId);
+    }
+  }, delay);
+}
 
-// // When button is clicked "Click here to continue onwards" this functionallity displays section 3
-// function showSection3() {
-//   const section3 = document.getElementById("section-3");
-//   section3.style.display = "block";
-// }
+// Plays audio dragon song
+function playDragonsong() {
+  console.log("myFunction was called!");
+  var audio = document.getElementById("dragonSong");
+  audio.play();
+}
+
+// Plays audio trol song
+function playTrolsong() {
+  console.log("myFunction was called!");
+  var audio = document.getElementById("trolSong");
+  audio.play();
+}
 
 // Functionality that displays the entered Teamname back to the user
 function showTeamName() {
@@ -71,43 +66,19 @@ function showTeamName() {
   section4.style.display = "block";
 }
 
-// // When "PART 1: The QUIZ" button is clicked this functionallity displays section 5
-// function showSection5() {
-//   const section5 = document.getElementById("section-5");
-//   section5.style.display = "block";
-// }
-
-// // Show section 5 
-// function showSection5() {
-//   var section = document.getElementById("section-5");
-//   section.style.display = "block";
-// }
-
-
-
 function checkQuizYoN() {
   const correctAnswer = "yes"; 
   const userInput = document.getElementById("userInput").value;
   const messageElement = document.getElementById("quizMessage");
   
   if (userInput.toLowerCase() === correctAnswer) {
-    messageElement.textContent = `Congratulations, you answered correctly!`;
+    messageElement.textContent = `Let's start!`;
     showQuiz();
   } else {
-    messageElement.textContent = "Let's play anyway!";
+    messageElement.textContent = "Let's start anyway";
     showQuiz();
   }
 }
-
-//   // When "submit" button is clicked this functionallity takes input, produces output and displays section 5
-// function playQuiz() {
-//   const YorN = document.getElementById("play-quiz").value;
-//   const outputDiv = document.getElementById("quizOutput");
-//   outputDiv.innerHTML = `${YorN}, let's play a little quiz to warm up!`;
-//   // Show section 6
-//   const section6 = document.getElementById("section-6");
-//   section6.style.display = "block";
-// }
 
   // The showQuiz() function sets the display style of the "quiz" section to "block" when the button is clicked, 
   // showing the quiz on the page. 
@@ -120,11 +91,11 @@ function checkQuizYoN() {
   // correct answers. 
   // You can then display the user's score and any feedback or explanations for the correct answers.
   function submitQuiz() {
-    const q1CorrectAnswer = "B";
-    const q2CorrectAnswer = "A";
+    const q1CorrectAnswer = "A";
+    const q2CorrectAnswer = "B";
     const q3CorrectAnswer = "A";
-    const q4CorrectAnswer = "A";
-    const q5CorrectAnswer = "A";
+    const q4CorrectAnswer = "C";
+    const q5CorrectAnswer = "C";
 
     const q1Answer = document.querySelector('input[name="q1"]:checked').value;
     const q2Answer = document.querySelector('input[name="q2"]:checked').value;
@@ -164,26 +135,24 @@ function checkQuizYoN() {
   }
 
   function checkRiddleAnswer() {
-    const correctAnswer = "castle shadow"; //add multiple right answers!!!!!!!!
+    const correctAnswer = "time";
     const userInput = document.getElementById("userInput").value;
     const messageElement = document.getElementById("riddleMessage");
     
     if (userInput.toLowerCase() === correctAnswer) {
-      messageElement.textContent = `Congratulations, you answered correctly! 
-      You may find your first Quest in the Bed Chamber.\n\n\n
-      When you have figured out the answer, please fill it in below.\n
-      The first number is 5 ;)`;
+      messageElement.textContent = `Congratulations, you answered correctly!`;
       const section8 = document.getElementById("section-8");
       section8.style.display = "block";
+      playDragonsong()
     } else {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
   }
 
-  function checkPuzzleAnswer() {
-    const correctAnswer = "1111";
-    const userInput = document.getElementById("inputNumberPuzzle").value;
-    const messageElement = document.getElementById("puzzleMessage");
+  function checkDragonAnswer() {
+    const correctAnswer = "smaug";
+    const userInput = document.getElementById("inputDragon").value;
+    const messageElement = document.getElementById("dragonMessage");
     
     if (userInput === correctAnswer) {
       messageElement.textContent = `Congratulations, you answered correctly!`;
@@ -196,12 +165,12 @@ function checkQuizYoN() {
   }
 
   function checkLyricsAnswer() {
-    const correctAnswer = `never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you`;
+    const correctAnswer = `7`;
     const userInput = document.getElementById("lyricsInput").value;
     const messageElement = document.getElementById("lyricsMessage");
 
     if (userInput.toLowerCase() === correctAnswer) {
-      messageElement.textContent = `Congratulations, you answered correctly!`;
+      messageElement.textContent = `Congratulations, you winners! Go get your Treasure!`;
       // const section9 = document.getElementById("section-9");
       // section9.style.display = "block";
     } else {

@@ -12,6 +12,7 @@ and the margins of the sections are reduced.-->
 		<script src="main.js"></script>
 		<link rel="shortcut icon" type="image/jpg" href="../SaskiaFT.github.io/">
 		<audio id="trolSong"><source src="trolSong.mp3" type="audio/mpeg"></audio>
+		<audio id="dragonSong"><source src="trolSong.mp3" type="audio/mpeg"></audio>
 	</head>
 
 	<body>
@@ -23,34 +24,38 @@ and the margins of the sections are reduced.-->
 			<p class="p2">This is a Modern <br> Treasure Map</p>	
 			<button class="medieval-button" id="showSection1btn" onclick="location.href='#section-1'">Let's start!</button>
 		</header>
-				<div class="black-bg">
-					<main>
-						<section>
-							<div id="section-1">
-								<h1><br>Introduction<br><br></h1>
-								<p id="introduction-text"></p>
-								<script>
-									const introductionText = `So glad you game to join us in the TrollenCastle.
-									We have been searching for the Treasure all alone for ages.
-									In the end we could not do it, but we have full trust in you.
-									Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
-									Also in the attic a dragon sleeps, so I would suggest you stay away.`;
-									showDelayedText(introductionText, 10, showSection3);
-								</script>
-							</div>
-					
-							<!-- Asking for Teamname - button -->
-							<div id="section-3" style="display: none;">
-								<form> 
-									<label for="team-name"><br><br>What would you like your Teamname to be?<br><br><br><br></label>
-									<input type="text" id="team-name" name="team-name">
-									<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
-								</form>
-								<br><br><div id="output"></div><br><br>
-							</div>
-						</section>
 
+			<div class="black-bg">
+				<main>
+
+					<section>
+						<!-- SECTION 1 -->
+						<div id="section-1">
+							<h1><br>Introduction<br><br></h1>
+							<p id="introduction-text"></p>
+							<script>
+								const introductionText = `So glad you game to join us in the TrollenCastle.
+								We have been searching for the Treasure all alone for ages.
+								In the end we could not do it, but we have full trust in you.
+								Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
+								Also in the attic a dragon sleeps, so I would suggest you stay away.`;
+								showDelayedText(introductionText, 10, showSection3);
+							</script>
+						</div>
+					
+						<!-- SECTION 3 -->
+						<div id="section-3" style="display: none;">
+							<form> 
+								<label for="team-name"><br><br>What would you like your Teamname to be?<br><br><br><br></label>
+								<input type="text" id="team-name" name="team-name">
+								<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
+							</form>
+							<br><br><div id="output"></div><br><br>
+						</div>
+					</section>
+	
 				<section>
+					<!-- SECTION 4 -->
 					<div id="section-4" style="display: none;">
 						<h1>Quiz</h1>
 						<p id="quiz-text"></p><br><br>
@@ -58,7 +63,6 @@ and the margins of the sections are reduced.-->
 						<script>
 							const quizText = `I think it would be fun to play a game. Are you up for it?\n\n`
 							printDelayedTextDelayed(quizText, "quiz-text" , 10);
-							// showDelayedText(quizText, 10, showSection5);
 						</script>
 
 						<form> 
@@ -70,94 +74,108 @@ and the margins of the sections are reduced.-->
 					</div>
 				</section>
 
-				<!-- The "How well do you know us" QUIZ -->
+				<!-- QUIZ -->
 				<section id="quiz" style="display: none;">
 					<form onsubmit="submitQuiz(); return false;">
-						<h2>The "How well do you know us" - Quiz</h2><br>
-						<h2>Question 1</h2>
-						<label><input type="radio" name="q1" value="A"> Option A</label><br>
-						<label><input type="radio" name="q1" value="B"> Option B</label><br>
-						<label><input type="radio" name="q1" value="C"> Option C</label><br>
+						<h2>The Fucking Awesome Quiz</h2><br>
+						<h2>1. What are the expectations for this party?</h2>
+						<label><input type="radio" name="q1" value="A"> A. No expectation is too high.</label><br>
+						<label><input type="radio" name="q1" value="B"> B. No expectation is too stoned.</label><br>
+						<label><input type="radio" name="q1" value="C"> C. All expectations should be managed.</label><br>
 				
-						<h2>Question 2</h2>
-						<label><input type="radio" name="q2" value="A"> Option A</label><br>
-						<label><input type="radio" name="q2" value="B"> Option B</label><br>
-						<label><input type="radio" name="q2" value="C"> Option C</label><br>
+						<h2>2. Why did the Graaf van Holland (old rich dude) deepen the hofvijver?</h2>
+						<label><input type="radio" name="q2" value="A"> A. Because he wanted to create an island for himself.</label><br>
+						<label><input type="radio" name="q2" value="B"> B. To let the ships from Delft bring beer to Den Haag.</label><br>
+						<label><input type="radio" name="q2" value="C"> C. Because he was an expert diver and wanted to practice.</label><br>
 				
-						<h2>Question 3</h2>
-						<label><input type="radio" name="q3" value="A"> Option A</label><br>
-						<label><input type="radio" name="q3" value="B"> Option B</label><br>
-						<label><input type="radio" name="q3" value="C"> Option C</label><br>
+						<h2>3. Why is the stork the city symbol of Den Haag?</h2>
+						<label><input type="radio" name="q3" value="A"> A. Because of the two storks on the market that cleaned the streets by eating the trash.</label><br>
+						<label><input type="radio" name="q3" value="B"> B. People from Den Haag were arrogant and looking down on people.</label><br>
+						<label><input type="radio" name="q3" value="C"> C. Because Den Haag looks like a stork when seen from above.</label><br>
+						<label><input type="radio" name="q3" value="D"> D. Graaf Roderik from Holland had a pet stork.</label><br>
 				
-						<h2>Question 4</h2>
-						<label><input type="radio" name="q4" value="A"> Option A</label><br>
-						<label><input type="radio" name="q4" value="B"> Option B</label><br>
-						<label><input type="radio" name="q4" value="C"> Option C</label><br>
+						<h2>4. Where was the first traffic light in the Netherlands?</h2>
+						<label><input type="radio" name="q4" value="A"> A. Goes</label><br>
+						<label><input type="radio" name="q4" value="B"> C. Nijkerk</label><br>
+						<label><input type="radio" name="q4" value="C"> C. Den Haag</label><br>
 				
-						<h2>Question 5</h2>
-						<label><input type="radio" name="q5" value="A"> Option A</label><br>
-						<label><input type="radio" name="q5" value="B"> Option B</label><br>
-						<label><input type="radio" name="q5" value="C"> Option C</label><br><br>
-				
+						<h2>5. How many stair steps does the tower have from the groud floor untill the top?</h2>
+						<label><input type="radio" name="q5" value="A"> A. 55</label><br>
+						<label><input type="radio" name="q5" value="B"> B. 41</label><br>
+						<label><input type="radio" name="q5" value="C"> C. 61</label><br><br>				
 						<button class="submit-button" type="submit">Submit</button><br>
 						<p id="result"></p>
 						<div id="passed-quiz"></div>
+						</script>
 					</form>
 				</section>
 			
 				<section>
+					<!-- SECTION 7 -->
 					<div id="section-7" style="display: none;">
+						<p class="p3">The first number is 5</p>
 						<h1>Riddle Time!</h1>
 						<p id="riddle-text"></p><br><br>
 
 						<script>
 							const riddleText = `Great job!\n Now a Riddle for you all..\n\n`
-							printDelayedTextDelayed(riddleText, "riddle-text" , 50);
+							printDelayedTextDelayed(riddleText, "riddle-text" , 10);
 						</script>
 
 						<form> 
-							<label for="riddle">I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I?</label><br><br><br>
+							<label for="riddle">
+								This thing all things devours<br>
+								Birds, beasts, trees, flowers<br>
+								Gnaws iron, bites steel<br>
+								Grinds hard stones to meal<br>
+								Slays king, ruins town,<br>
+								And beats mountain down.</label><br><br><br>
 							<input type="text" id="userInput"><br><br>
 							<button class="submit-button" type="button" onclick="checkRiddleAnswer()">Submit</button><br><br><br>
 							<div id="riddleMessage"></div><br><br>
 						</form>	
 					
 				<section>
+					<!-- SECTION 8 -->
 					<div id="section-8" style="display: none;">
-						<h1>The Puzzle</h1>
+						<p class="p3">The second number is 8</p>
+						<h1>De Drakenrijder</h1>
+						<p1>You may find a Quest in the Kitchens.<br>
+							Are you afraid of dragons?<br><br><br></p1>
 						
 						<form> 
-							<label for="inputNumberPuzzle">Please fill in 4 numbers:</label><br><br><br>
-							<input type="text" id="inputNumberPuzzle"><br><br>
-							<button class="submit-button" type="button" onclick="checkPuzzleAnswer()">Submit</button><br><br><br>
-							<div id="puzzleMessage"></div><br><br>
+							<input type="text" id="inputDragon"><br><br>
+							<button class="submit-button" type="button" onclick="checkDragonAnswer()">Submit</button><br><br><br>
+							<div id="dragonMessage"></div><br><br>
 						</form>	
 					</div>
 				</section>
 
 				<section>
+					<!-- SECTION 9 -->
 					<div id="section-9" style="display: none;">
+						<p class="p3">The third number is 2</p>
 						<h1>Do you like music?</h1>
 						<p id="song-text"></p><br><br>
 
 						<script>
 							const songText = `Nicely done!\n We knew you would be awesome at this.\n
-							It will be interesting to see how you figure out this one though.
-							What are the next 3 sentences of this song?\n 
-							Please separate each sentence with a ","\n\n`
+							For you last quest move over the Great Hall.\n
+							In the Great Hall look closer at the....\n\n`
 							printDelayedTextDelayed(songText, "song-text" , 50);
 						</script>
 
 						<form> 
-							<label for="lyricsInput">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br></label><br><br><br>
+							<label for="lyricsInput">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br>Fill in you final answer down below.<br>It should be one number.</label><br><br><br>
 							<input type="text" id="lyricsInput"><br><br>
 							<button class="submit-button" type="button" onclick="checkLyricsAnswer()">Submit</button><br><br><br>
 							<div id="lyricsMessage"></div><br><br>
 						</form>	
 
-			<footer>
-				<p>&copy; 2023 TreasureHunt Website. All rights reserved.</p>
-			</footer>	
+				<footer>
+					<p>&copy; 2023 TreasureHunt Website. All rights reserved.</p>
+				</footer>
+
 			</main>
 		</div>
 	</body>
