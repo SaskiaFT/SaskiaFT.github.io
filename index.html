@@ -41,7 +41,7 @@ and the margins of the sections are reduced.-->
 					</div>
 
 					<!-- <div id="section-2" style="display: none;"> WHY WILL THIS NOT WORK? -->
-						<br><br><button id="showSection3btn" onclick="showSection3()">Click here to continue onwards</button><!-- show section 3 after clicking this button -->
+						<br><br><button class="continue-button" id="showSection3btn" onclick="showSection3()">Click here to continue onwards</button><!-- show section 3 after clicking this button -->
 					<!-- </div> -->
 					
 					<!-- Asking for Teamname - button -->
@@ -49,7 +49,7 @@ and the margins of the sections are reduced.-->
 						<form> 
 							<label for="team-name"><br><br>What would you like your Teamname to be?<br><br></label>
 							<input type="text" id="team-name" name="team-name">
-							<button id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
+							<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
 						</form>
 						<br><br><div id="output"></div><br><br>
 					</div>
@@ -59,7 +59,7 @@ and the margins of the sections are reduced.-->
 						<div id="section-4" style="display: none;">
 							<h1>Quiz<br><br></h1>
 							<p id="quizText"></p>
-							<button id="showSection5btn" onclick="showSection5()">PART 1: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
+							<button class="continue-button" id="showSection5btn" onclick="showSection5()">PART 1: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
 						</div>
 
 						<!-- Are you ready to play a game - button -->
@@ -67,13 +67,13 @@ and the margins of the sections are reduced.-->
 							<form>
 								<label for="play-quiz">I think it would be fun to play a game. Are you up for it? Please enter 'yes' and press submit.</label>
 								<br><br><br><br><input type="text" id="play-quiz" name="play-quiz">
-								<button id="showSection6btn" type="button" onclick="playQuiz()">Submit</button><br><br>
+								<button class="submit-button" id="showSection6btn" type="button" onclick="playQuiz()">Submit</button><br><br>
 							</form>
 						<div id="quizOutput"></div>
 
 						<!-- Are you ready for the quiz - button -->
 						<div id="section-6" style="display:none;">
-							<br><br><button id="showSection7btn" onclick="showQuiz()">Click to take quiz</button>
+							<br><br><button class="continue-button" id="showSection7btn" onclick="showQuiz()">Click to take quiz</button>
 						</div>
 					</div>
 				</section>
@@ -107,7 +107,7 @@ and the margins of the sections are reduced.-->
 						<label><input type="radio" name="q5" value="B"> Option B</label><br>
 						<label><input type="radio" name="q5" value="C"> Option C</label><br><br>
 				
-						<button type="submit">Submit</button><br>
+						<button class="submit-button" type="submit">Submit</button><br>
 						<p id="result"></p>
 						<div id="passed-quiz"></div>
 					</form>
@@ -126,7 +126,7 @@ and the margins of the sections are reduced.-->
 						<form> 
 							<label for="riddle">I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I?</label><br><br><br>
 							<input type="text" id="userInput"><br><br>
-							<button type="button" onclick="CheckRiddleAnswer()">Submit</button><br><br><br>
+							<button class="submit-button" type="button" onclick="CheckRiddleAnswer()">Submit</button><br><br><br>
 							<div id="message"></div><br><br>
 						</form>		
 						

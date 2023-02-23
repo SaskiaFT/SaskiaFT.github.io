@@ -71,15 +71,62 @@ span1 {
 		display: inline-block;
 		cursor: pointer;
 		transition: background-color 0.3s ease;
-}
+	}
 	  
-.medieval-button:hover {
-	background-color: #CD853F;
-}
+	.medieval-button:hover {
+		background-color: #CD853F;
+	}
 
-form {
+	form {
+		margin-bottom: 20px;
+	}
+
+.continue-button {
+	background-color: pink;
+	border: 2px solid #CD853F;
+	color: #FFF;
+	font-family: Homemade Apple;
+	font-size: 10px;
+	padding: 10px 20px;
+	text-align: center;
+	text-shadow: 1px 1px #000;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	}
+  
+	.continue-button:hover {
+	background-color: #CD853F;
+	}
+
+	form {
 	margin-bottom: 20px;
-}
+	}
+
+.submit-button {
+	background-color: blue;
+	border: 2px solid #CD853F;
+	color: #FFF;
+	font-family: Homemade Apple;
+	font-size: 10px;
+	padding: 10px 20px;
+	text-align: center;
+	text-shadow: 1px 1px #000;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	}
+	
+	.submit-button:hover {
+	background-color: #CD853F;
+	}
+
+	form {
+	margin-bottom: 20px;
+	}
+
 
 #showSection1btn {
 	position: absolute; /* set the position of the button to absolute */
