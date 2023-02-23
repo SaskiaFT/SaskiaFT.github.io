@@ -47,6 +47,10 @@ let dragonsong = new Audio('dragonsong.mp3');
 let trolsong = new Audio('trolsong.mp3');
 let treasuresong = new Audio(`treasuresong.mp3`)
 
+// let dragonsong = document.getElementById('dragonSong');
+// let trolsong = document.getElementById('trolSong');
+// let treasuresong = document.getElementById('treasureSong');
+
 function playDragonsong() {
   dragonsong.play();
 }
