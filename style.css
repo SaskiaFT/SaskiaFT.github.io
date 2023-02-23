@@ -10,7 +10,7 @@ body {
 }
 
 header {
-	background: url('../SaskiaFT.github.io/treasure-map.jpg');
+	background-image: url('../SaskiaFT.github.io/treasure-map.jpg');
 	background-size: cover;
 	height: 100vh;
 	color: #fff;
