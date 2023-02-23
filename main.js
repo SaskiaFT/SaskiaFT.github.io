@@ -70,7 +70,7 @@ function checkQuizYoN() {
   const messageElement = document.getElementById("quizMessage");
   
   if (userInput.toLowerCase() != correctAnswer) {
-    messageElement.textContent = `Let's begin!`;
+    messageElement.textContent = `Let's start the game!`;
     showQuiz();
   } else {
     messageElement.textContent = "Let's do it anyway!";
@@ -153,7 +153,7 @@ function checkDragonAnswer() {
   const messageElement = document.getElementById("dragonMessage");
   playTrolsong();
     
-  if (userInput === correctAnswer) {
+  if (userInput.toLowerCase() === correctAnswer) {
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section9 = document.getElementById("section-9");
     section9.style.display = "block";
