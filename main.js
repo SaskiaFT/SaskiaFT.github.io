@@ -1,17 +1,3 @@
-//Print text delayed
-function printDelayedText(text, elementId, delay) {
-  let i = 0;
-  const element = document.getElementById(elementId);
-  const timer = setInterval(() => {
-    element.textContent += text[i];
-    i++;
-    if (i === text.length) {
-      clearInterval(timer);
-    }
-  }, delay);
-
-}
-
 // Print text delayed but first check if the element is visible before starting the text printing.
 // offsetParent property of the element to check if it is visible. If the offsetParent is null, the element is not displayed, so the function does not start printing the text. Once the element is visible, 
 // the function begins printing the text.
@@ -32,17 +18,49 @@ function printDelayedTextDelayed(text, elementId, delay) {
   }, delay);
 }
 
+// Plays audio trol song
+function playTrolsong() {
+  console.log("myFunction was called!");
+  var audio = document.getElementById("trolSong");
+  audio.play();
+}
+
+// Show delayed text and when it is finished show new section
+function showDelayedText(text, delay, callback) {
+  var element = document.getElementById("introduction-text");
+  element.innerHTML = "";
+
+  var index = 0;
+  function addLetter() {
+    element.innerHTML += text[index];
+    index++;
+    if (index >= text.length) {
+      if (callback) callback();
+      return;
+    }
+    setTimeout(addLetter, delay);
+  }
+
+  setTimeout(addLetter, delay);
+}
+
+// Show section 3 
+function showSection3() {
+  var section = document.getElementById("section-3");
+  section.style.display = "block";
+}
+
 // When button is clicked "Click here to continue onwards" this functionallity displays section 2
 // function showSection2() {
 //   const section2 = document.getElementById("section-2");
 //   section2.style.display = "block";
 // }
 
-// When button is clicked "Click here to continue onwards" this functionallity displays section 2
-function showSection3() {
-  const section3 = document.getElementById("section-3");
-  section3.style.display = "block";
-}
+// // When button is clicked "Click here to continue onwards" this functionallity displays section 3
+// function showSection3() {
+//   const section3 = document.getElementById("section-3");
+//   section3.style.display = "block";
+// }
 
 // Functionality that displays the entered Teamname back to the user
 function showTeamName() {
@@ -53,21 +71,43 @@ function showTeamName() {
   section4.style.display = "block";
 }
 
-// When "PART 1: The QUIZ" button is clicked this functionallity displays section 5
-function showSection5() {
-  const section5 = document.getElementById("section-5");
-  section5.style.display = "block";
+// // When "PART 1: The QUIZ" button is clicked this functionallity displays section 5
+// function showSection5() {
+//   const section5 = document.getElementById("section-5");
+//   section5.style.display = "block";
+// }
+
+// // Show section 5 
+// function showSection5() {
+//   var section = document.getElementById("section-5");
+//   section.style.display = "block";
+// }
+
+
+
+function checkQuizYoN() {
+  const correctAnswer = "yes"; 
+  const userInput = document.getElementById("userInput").value;
+  const messageElement = document.getElementById("quizMessage");
+  
+  if (userInput.toLowerCase() === correctAnswer) {
+    messageElement.textContent = `Congratulations, you answered correctly!`;
+    showQuiz();
+  } else {
+    messageElement.textContent = "Let's play anyway!";
+    showQuiz();
+  }
 }
 
-  // When "submit" button is clicked this functionallity takes input, produces output and displays section 5
-function playQuiz() {
-  const YorN = document.getElementById("play-quiz").value;
-  const outputDiv = document.getElementById("quizOutput");
-  outputDiv.innerHTML = `${YorN}, let's play a little quiz to warm up!`;
-  // Show section 6
-  const section6 = document.getElementById("section-6");
-  section6.style.display = "block";
-}
+//   // When "submit" button is clicked this functionallity takes input, produces output and displays section 5
+// function playQuiz() {
+//   const YorN = document.getElementById("play-quiz").value;
+//   const outputDiv = document.getElementById("quizOutput");
+//   outputDiv.innerHTML = `${YorN}, let's play a little quiz to warm up!`;
+//   // Show section 6
+//   const section6 = document.getElementById("section-6");
+//   section6.style.display = "block";
+// }
 
   // The showQuiz() function sets the display style of the "quiz" section to "block" when the button is clicked, 
   // showing the quiz on the page. 
@@ -149,20 +189,17 @@ function playQuiz() {
       messageElement.textContent = `Congratulations, you answered correctly!`;
       const section9 = document.getElementById("section-9");
       section9.style.display = "block";
+      playTrolsong();
     } else {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
   }
 
   function checkLyricsAnswer() {
-    // Plays audio trol song
-    var audio = document.getElementById("trolSong");
-    audio.play();
-    // outputs the question
     const correctAnswer = `never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you`;
     const userInput = document.getElementById("lyricsInput").value;
     const messageElement = document.getElementById("lyricsMessage");
-    // Check the answer
+
     if (userInput.toLowerCase() === correctAnswer) {
       messageElement.textContent = `Congratulations, you answered correctly!`;
       // const section9 = document.getElementById("section-9");
@@ -171,3 +208,7 @@ function playQuiz() {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
   }
+
+  
+
+  

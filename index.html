@@ -11,7 +11,7 @@ and the margins of the sections are reduced.-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One|Homemade Apple|Cinzel Decorative|Rye">
 		<script src="main.js"></script>
 		<link rel="shortcut icon" type="image/jpg" href="../SaskiaFT.github.io/">
-		<audio id="trolSong"><source src="path/to/sound/file.mp3" type="audio/mpeg"></audio>
+		<audio id="trolSong"><source src="trolSong.mp3" type="audio/mpeg"></audio>
 	</head>
 
 	<body>
@@ -35,44 +35,38 @@ and the margins of the sections are reduced.-->
 									In the end we could not do it, but we have full trust in you.
 									Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
 									Also in the attic a dragon sleeps, so I would suggest you stay away.`;
-									printDelayedText(introductionText, "introduction-text" , 50);
+									showDelayedText(introductionText, 10, showSection3);
 								</script>
 							</div>
-					<!-- <div id="section-2" style="display: none;"> WHY WILL THIS NOT WORK? -->
-						<br><br><button class="continue-button" id="showSection3btn" onclick="showSection3()">Click here to continue onwards</button><!-- show section 3 after clicking this button -->
-					<!-- </div> -->	
 					
-					<!-- Asking for Teamname - button -->
-					<div id="section-3" style="display: none;">
-						<form> 
-							<label for="team-name"><br><br>What would you like your Teamname to be?<br><br></label>
-							<input type="text" id="team-name" name="team-name">
-							<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
-						</form>
-						<br><br><div id="output"></div><br><br>
-					</div>
-				</section>
+							<!-- Asking for Teamname - button -->
+							<div id="section-3" style="display: none;">
+								<form> 
+									<label for="team-name"><br><br>What would you like your Teamname to be?<br><br><br><br></label>
+									<input type="text" id="team-name" name="team-name">
+									<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
+								</form>
+								<br><br><div id="output"></div><br><br>
+							</div>
+						</section>
 
 				<section>
-						<div id="section-4" style="display: none;">
-							<h1>Quiz<br><br></h1>
-							<p id="quizText"></p>
-							<button class="continue-button" id="showSection5btn" onclick="showSection5()">PART I: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
-						</div>
+					<div id="section-4" style="display: none;">
+						<h1>Quiz</h1>
+						<p id="quiz-text"></p><br><br>
 
-						<!-- Are you ready to play a game - button -->
-						<div id="section-5" style="display:none;">
-							<form>
-								<label for="play-quiz">I think it would be fun to play a game. Are you up for it? Please enter 'yes' and press submit.</label>
-								<br><br><br><br><input type="text" id="play-quiz" name="play-quiz">
-								<button class="submit-button" id="showSection6btn" type="button" onclick="playQuiz()">Submit</button><br><br>
-							</form>
-						<div id="quizOutput"></div>
+						<script>
+							const quizText = `I think it would be fun to play a game. Are you up for it?\n\n`
+							printDelayedTextDelayed(quizText, "quiz-text" , 10);
+							// showDelayedText(quizText, 10, showSection5);
+						</script>
 
-						<!-- Are you ready for the quiz - button -->
-						<div id="section-6" style="display:none;">
-							<br><br><button class="continue-button" id="showSection7btn" onclick="showQuiz()">Click to take quiz</button>
-						</div>
+						<form> 
+							<label for="playQuiz">Please enter 'yes' and press submit.</label><br><br><br>
+							<input type="text" id="play-quiz" name="play-quiz"><br><br>
+							<button class="submit-button" type="button" onclick="checkQuizYoN()">Submit</button><br><br>
+							<div id="quizMessage"></div><br><br>
+						</form>	
 					</div>
 				</section>
 
@@ -155,7 +149,7 @@ and the margins of the sections are reduced.-->
 						</script>
 
 						<form> 
-							<label for="riddle">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br></label><br><br><br>
+							<label for="lyricsInput">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br></label><br><br><br>
 							<input type="text" id="lyricsInput"><br><br>
 							<button class="submit-button" type="button" onclick="checkLyricsAnswer()">Submit</button><br><br><br>
 							<div id="lyricsMessage"></div><br><br>
