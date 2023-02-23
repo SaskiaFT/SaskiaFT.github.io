@@ -1,0 +1,181 @@
+/*This example uses a media query to adjust the layout of the website for devices with a screen width of 600 pixels
+or less. The header becomes smaller, the navigation menu switches to a vertical layout, 
+and the margins of the sections are reduced.*/
+
+/* Default styles for desktop devices */
+
+body {
+	background-color: black;
+	margin: 0;
+}
+
+header {
+	background: url('../responsiveWebsite/treasure-map.jpg');
+	background-size: cover;
+	height: 100vh;
+	color: #fff;
+	margin-top: 0;
+}
+
+logo {
+	font-family: Homemade Apple;
+	text-align: left;
+	font-weight: bold;
+	font-size: 5vw
+}
+
+h1 {
+	font-family: Cinzel Decorative;
+	font-size: 7vw;
+	color: white;
+	text-align: center;
+}
+
+h2 {
+	font-family: Cinzel Decorative;
+}
+
+h3{
+	font-family: Homemade Apple;
+}
+
+.p1 {
+	font-family: Cinzel Decorative;
+	font-size: 15vw; /* set the font size to be 4% of the viewport width */
+	text-align: center;
+	margin: 0px; /* remove any default margin */
+	color:azure
+}
+
+.p2 {
+	font-family: Cinzel Decorative;
+	font-size: 6vw; /* set the font size to be 4% of the viewport width */
+	color: #fff;
+	text-align: center;
+}
+
+span1 {
+	color:rgb(42, 8, 66);
+}
+  
+.medieval-button {
+		background-color: #8B4513;
+		border: 2px solid #CD853F;
+		color: #FFF;
+		font-family: Homemade Apple;
+		font-size: 10px;
+		padding: 10px 20px;
+		text-align: center;
+		text-shadow: 1px 1px #000;
+		text-decoration: none;
+		display: inline-block;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+}
+	  
+.medieval-button:hover {
+	background-color: #CD853F;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+#showSection1btn {
+	position: absolute; /* set the position of the button to absolute */
+	top: 88%; /* set the distance from the top of the section to the button */
+	left: 50%; /* set the distance from the left of the section to the button */
+	transform: translate(-50%, -50%); /* center the button vertically and horizontally */
+}
+
+/* #showSection2btn {
+
+}
+
+#showSection3btn {
+
+}
+
+#showSection4btn {
+
+}
+
+#showSection5btn {
+
+}
+
+#showSection6btn {
+
+}
+
+#showSection7btn {
+
+} */
+
+.black-bg {
+	background-color: black; /* set the background color to black */
+	width: 100%; /* set the width to 100% */
+	height: 100vh; /* set the height to 100% of the viewport height */
+  }
+
+#introduction-text {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+
+#section-3 {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+
+#section-4 {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+
+#section-5 {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+
+#section-6 {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+
+#section-7 {
+	font-family: Fauna One;
+	color: white;
+	font-size: 3vw; /* set the font size to be 4% of the viewport width */
+}
+  
+section {
+	margin: 50px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+	header {
+		padding: 10px;
+	}
+
+	section {
+		margin: 20px;
+	}
+}
+
+/* This code styles the quiz section with a width of 50%, 
+centers it on the page, and adds a gray background with padding and a border. */
+#quiz {
+	width: 50%;
+	margin: 0 auto;
+	background-color: #ccc;
+	padding: 20px;
+	border: 1px solid #ccc;
+  }
+  

@@ -1,0 +1,141 @@
+<!--This example uses a media query to adjust the layout of the website for devices with a screen width of 600 pixels
+or less. The header becomes smaller, the navigation menu switches to a vertical layout, 
+and the margins of the sections are reduced.-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Treasure Hunt</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Fauna+One|Homemade Apple|Cinzel Decorative|Rye">
+		<script src="main.js"></script>
+		<link rel="shortcut icon" type="image/jpg" href="../responsiveWebsite/favicon.ico">
+	</head>
+
+	<body>
+		<!-- Header content -->
+		<header>
+			<logo><span1>Treasure</span1>Hunt</logo><br><br>
+			<p class="p2">Hello Children of the Earth,<br><br></p>
+			<p class="p1">Welcome.<br></p>
+			<p class="p2">This is a Modern <br> Treasure Map</p>	
+			<button class="medieval-button" id="showSection1btn" onclick="location.href='#section-1'">Let's start!</button>
+		</header>
+
+		<div class="black-bg">
+			<main>
+				<section>
+					<div id="section-1">
+						<h1><br>Introduction<br><br></h1>
+						<p id="introduction-text"></p>
+
+						<script>
+							const introductionText = `So glad you game to join us in the TrollenCastle.
+							We have been searching for the Treasure all alone for ages.
+							In the end we could not do it, but we have full trust in you.
+							Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
+							Also in the attic a dragon sleeps, so I would suggest you stay away.`;
+							printDelayedText(introductionText, "introduction-text" , 50);
+						</script>
+					</div>
+
+					<!-- <div id="section-2" style="display: none;"> WHY WILL THIS NOT WORK? -->
+						<br><br><button id="showSection3btn" onclick="showSection3()">Click here to continue onwards</button><!-- show section 3 after clicking this button -->
+					<!-- </div> -->
+					
+					<!-- Asking for Teamname - button -->
+					<div id="section-3" style="display: none;">
+						<form> 
+							<label for="team-name"><br><br>What would you like your Teamname to be?<br><br></label>
+							<input type="text" id="team-name" name="team-name">
+							<button id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
+						</form>
+						<br><br><div id="output"></div><br><br>
+					</div>
+				</section>
+
+				<section>
+						<div id="section-4" style="display: none;">
+							<h1>Quiz<br><br></h1>
+							<p id="quizText"></p>
+							<button id="showSection5btn" onclick="showSection5()">PART 1: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
+						</div>
+
+						<!-- Are you ready to play a game - button -->
+						<div id="section-5" style="display:none;">
+							<form>
+								<label for="play-quiz">I think it would be fun to play a game. Are you up for it? Please enter 'yes' and press submit.</label>
+								<br><br><br><br><input type="text" id="play-quiz" name="play-quiz">
+								<button id="showSection6btn" type="button" onclick="playQuiz()">Submit</button><br><br>
+							</form>
+						<div id="quizOutput"></div>
+
+						<!-- Are you ready for the quiz - button -->
+						<div id="section-6" style="display:none;">
+							<br><br><button id="showSection7btn" onclick="showQuiz()">Click to take quiz</button>
+						</div>
+					</div>
+				</section>
+
+				<!-- The "How well do you know us" QUIZ -->
+				<section id="quiz" style="display: none;">
+					<form onsubmit="submitQuiz(); return false;">
+						<h2>The "How well do you know us" - Quiz</h2><br>
+						<h2>Question 1</h2>
+						<label><input type="radio" name="q1" value="A"> Option A</label><br>
+						<label><input type="radio" name="q1" value="B"> Option B</label><br>
+						<label><input type="radio" name="q1" value="C"> Option C</label><br>
+				
+						<h2>Question 2</h2>
+						<label><input type="radio" name="q2" value="A"> Option A</label><br>
+						<label><input type="radio" name="q2" value="B"> Option B</label><br>
+						<label><input type="radio" name="q2" value="C"> Option C</label><br>
+				
+						<h2>Question 3</h2>
+						<label><input type="radio" name="q3" value="A"> Option A</label><br>
+						<label><input type="radio" name="q3" value="B"> Option B</label><br>
+						<label><input type="radio" name="q3" value="C"> Option C</label><br>
+				
+						<h2>Question 4</h2>
+						<label><input type="radio" name="q4" value="A"> Option A</label><br>
+						<label><input type="radio" name="q4" value="B"> Option B</label><br>
+						<label><input type="radio" name="q4" value="C"> Option C</label><br>
+				
+						<h2>Question 5</h2>
+						<label><input type="radio" name="q5" value="A"> Option A</label><br>
+						<label><input type="radio" name="q5" value="B"> Option B</label><br>
+						<label><input type="radio" name="q5" value="C"> Option C</label><br><br>
+				
+						<button type="submit">Submit</button><br>
+						<p id="result"></p>
+						<div id="passed-quiz"></div>
+					</form>
+				</section>
+			
+				<section>
+					<div id="section-7" style="display: none;">
+						<h2>Riddle Time!</h2>
+						<p id="riddle-text"></p><br><br>
+
+						<script>
+							const riddleText = `Great job!\n Now a Riddle for you all..\n\n`
+							printDelayedTextDelayed(riddleText, "riddle-text" , 50);
+						</script>
+
+						<form> 
+							<label for="riddle">I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I?</label><br><br><br>
+							<input type="text" id="userInput"><br><br>
+							<button type="button" onclick="CheckRiddleAnswer()">Submit</button><br><br><br>
+							<div id="message"></div><br><br>
+						</form>		
+						
+						<footer>
+							<p>&copy; 2023 TreasureHunt Website. All rights reserved.</p>
+						</footer>	
+					</div>	
+				</section>		
+			</main>
+		</div>
+	</body>
+</html>
