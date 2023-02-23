@@ -45,14 +45,14 @@ function printDelayedTextDelayed(text, elementId, delay) {
 
 // Plays audio dragon song
 function playDragonsong() {
-  console.log("myFunction was called!");
+  // console.log("myFunction was called!");
   var audio = document.getElementById("dragonSong");
   audio.play();
 }
 
 // Plays audio trol song
 function playTrolsong() {
-  console.log("myFunction was called!");
+  // console.log("myFunction was called!");
   var audio = document.getElementById("trolSong");
   audio.play();
 }
