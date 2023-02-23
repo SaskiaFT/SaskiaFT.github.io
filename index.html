@@ -56,7 +56,7 @@ and the margins of the sections are reduced.-->
 						<div id="section-4" style="display: none;">
 							<h1>Quiz<br><br></h1>
 							<p id="quizText"></p>
-							<button class="continue-button" id="showSection5btn" onclick="showSection5()">PART 1: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
+							<button class="continue-button" id="showSection5btn" onclick="showSection5()">PART I: The QUIZ</button><br><br><br><br><!-- show section 5 after clicking this button -->
 						</div>
 
 						<!-- Are you ready to play a game - button -->
@@ -112,7 +112,7 @@ and the margins of the sections are reduced.-->
 			
 				<section>
 					<div id="section-7" style="display: none;">
-						<h2>Riddle Time!</h2>
+						<h1>Riddle Time!</h1>
 						<p id="riddle-text"></p><br><br>
 
 						<script>
@@ -123,23 +123,46 @@ and the margins of the sections are reduced.-->
 						<form> 
 							<label for="riddle">I am large as a castle, yet lighter than air. 100 men and their horses cannot move me. What am I?</label><br><br><br>
 							<input type="text" id="userInput"><br><br>
-							<button class="submit-button" type="button" onclick="CheckRiddleAnswer()">Submit</button><br><br><br>
+							<button class="submit-button" type="button" onclick="checkRiddleAnswer()">Submit</button><br><br><br>
 							<div id="riddleMessage"></div><br><br>
 						</form>	
+					
+				<section>
+					<div id="section-8" style="display: none;">
+						<h1>The Puzzle</h1>
 						
 						<form> 
 							<label for="inputNumberPuzzle">Please fill in 4 numbers:</label><br><br><br>
 							<input type="text" id="inputNumberPuzzle"><br><br>
-							<button class="submit-button" type="button" onclick="CheckPuzzleAnswer()">Submit</button><br><br><br>
+							<button class="submit-button" type="button" onclick="checkPuzzleAnswer()">Submit</button><br><br><br>
 							<div id="puzzleMessage"></div><br><br>
-						</form>		
-						
-						
-						<footer>
-							<p>&copy; 2023 TreasureHunt Website. All rights reserved.</p>
-						</footer>	
-					</div>	
-				</section>		
+						</form>	
+					</div>
+				</section>
+
+				<section>
+					<div id="section-9" style="display: none;">
+						<h1>Do you like music?</h1>
+						<p id="song-text"></p><br><br>
+
+						<script>
+							const songText = `Nicely done!\n We knew you would be awesome at this.\n
+							It will be interesting to see how you figure out this one though.
+							What are the next 3 sentences of this song?\n 
+							Please separate each sentence with a ","\n\n`
+							printDelayedTextDelayed(songText, "song-text" , 50);
+						</script>
+
+						<form> 
+							<label for="riddle">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br></label><br><br><br>
+							<input type="text" id="lyricsInput"><br><br>
+							<button class="submit-button" type="button" onclick="checkLyricsAnswer()">Submit</button><br><br><br>
+							<div id="lyricsMessage"></div><br><br>
+						</form>	
+
+			<footer>
+				<p>&copy; 2023 TreasureHunt Website. All rights reserved.</p>
+			</footer>	
 			</main>
 		</div>
 	</body>

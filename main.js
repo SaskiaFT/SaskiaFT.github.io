@@ -123,7 +123,7 @@ function playQuiz() {
      }
   }
 
-  function CheckRiddleAnswer() {
+  function checkRiddleAnswer() {
     const correctAnswer = "castle shadow"; //add multiple right answers!!!!!!!!
     const userInput = document.getElementById("userInput").value;
     const messageElement = document.getElementById("riddleMessage");
@@ -133,22 +133,37 @@ function playQuiz() {
       You may find your first Quest in the Bed Chamber.\n\n\n
       When you have figured out the answer, please fill it in below.\n
       The first number is 5 ;)`;
+      const section8 = document.getElementById("section-8");
+      section8.style.display = "block";
     } else {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
   }
 
-  // function CheckPuzzleAnswer() {
-  //   const correctAnswer = "castle shadow"; //add multiple right answers!!!!!!!!
-  //   const userInput = document.getElementById("inputNumberPuzzle").value;
-  //   const messageElement = document.getElementById("puzzleMessage");
+  function checkPuzzleAnswer() {
+    const correctAnswer = "1111";
+    const userInput = document.getElementById("inputNumberPuzzle").value;
+    const messageElement = document.getElementById("puzzleMessage");
     
-  //   if (userInput.toLowerCase() === correctAnswer) {
-  //     messageElement.textContent = `Congratulations, you answered correctly! 
-  //     You may find your first Quest in the Bed Chamber.\n\n\n
-  //     When you have figured out the answer, please fill it in below.\n
-  //     The first number is 5 ;)`;
-  //   } else {
-  //     messageElement.textContent = "Sorry, that's incorrect. Please try again.";
-  //   }
-  // }
+    if (userInput === correctAnswer) {
+      messageElement.textContent = `Congratulations, you answered correctly!`;
+      const section9 = document.getElementById("section-9");
+      section9.style.display = "block";
+    } else {
+      messageElement.textContent = "Sorry, that's incorrect. Please try again.";
+    }
+  }
+
+  function checkLyricsAnswer() {
+    const correctAnswer = `never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you`;
+    const userInput = document.getElementById("lyricsInput").value;
+    const messageElement = document.getElementById("lyricsMessage");
+    
+    if (userInput.toLowerCase() === correctAnswer) {
+      messageElement.textContent = `Congratulations, you answered correctly!`;
+      // const section9 = document.getElementById("section-9");
+      // section9.style.display = "block";
+    } else {
+      messageElement.textContent = "Sorry, that's incorrect. Please try again.";
+    }
+  }
