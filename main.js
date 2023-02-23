@@ -155,10 +155,14 @@ function playQuiz() {
   }
 
   function checkLyricsAnswer() {
+    // Plays audio trol song
+    var audio = document.getElementById("trolSong");
+    audio.play();
+    // outputs the question
     const correctAnswer = `never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you`;
     const userInput = document.getElementById("lyricsInput").value;
     const messageElement = document.getElementById("lyricsMessage");
-    
+    // Check the answer
     if (userInput.toLowerCase() === correctAnswer) {
       messageElement.textContent = `Congratulations, you answered correctly!`;
       // const section9 = document.getElementById("section-9");
