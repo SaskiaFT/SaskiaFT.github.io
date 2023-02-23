@@ -22,27 +22,24 @@ and the margins of the sections are reduced.-->
 			<p class="p2">This is a Modern <br> Treasure Map</p>	
 			<button class="medieval-button" id="showSection1btn" onclick="location.href='#section-1'">Let's start!</button>
 		</header>
-
-		<div class="black-bg">
-			<main>
-				<section>
-					<div id="section-1">
-						<h1><br>Introduction<br><br></h1>
-						<p id="introduction-text"></p>
-
-						<script>
-							const introductionText = `So glad you game to join us in the TrollenCastle.
-							We have been searching for the Treasure all alone for ages.
-							In the end we could not do it, but we have full trust in you.
-							Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
-							Also in the attic a dragon sleeps, so I would suggest you stay away.`;
-							printDelayedText(introductionText, "introduction-text" , 50);
-						</script>
-					</div>
-
+				<div class="black-bg">
+					<main>
+						<section>
+							<div id="section-1">
+								<h1><br>Introduction<br><br></h1>
+								<p id="introduction-text"></p>
+								<script>
+									const introductionText = `So glad you game to join us in the TrollenCastle.
+									We have been searching for the Treasure all alone for ages.
+									In the end we could not do it, but we have full trust in you.
+									Please do not close or refresh this window on your device, do not cheat, and do not break stuff in the Castle.
+									Also in the attic a dragon sleeps, so I would suggest you stay away.`;
+									printDelayedText(introductionText, "introduction-text" , 50);
+								</script>
+							</div>
 					<!-- <div id="section-2" style="display: none;"> WHY WILL THIS NOT WORK? -->
 						<br><br><button class="continue-button" id="showSection3btn" onclick="showSection3()">Click here to continue onwards</button><!-- show section 3 after clicking this button -->
-					<!-- </div> -->
+					<!-- </div> -->	
 					
 					<!-- Asking for Teamname - button -->
 					<div id="section-3" style="display: none;">

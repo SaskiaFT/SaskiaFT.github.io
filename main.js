@@ -1,9 +1,3 @@
-// Start the treasurehunt by clicking the button
-function showSection1() {
-  const section1 = document.getElementById("section-1");
-  section1.style.display = "block";
-}
-
 //Print text delayed
 function printDelayedText(text, elementId, delay) {
   let i = 0;
@@ -39,10 +33,10 @@ function printDelayedTextDelayed(text, elementId, delay) {
 }
 
 // When button is clicked "Click here to continue onwards" this functionallity displays section 2
-function showSection2() {
-  const section2 = document.getElementById("section-2");
-  section2.style.display = "block";
-}
+// function showSection2() {
+//   const section2 = document.getElementById("section-2");
+//   section2.style.display = "block";
+// }
 
 // When button is clicked "Click here to continue onwards" this functionallity displays section 2
 function showSection3() {
