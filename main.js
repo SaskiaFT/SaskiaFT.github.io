@@ -45,6 +45,7 @@ function printDelayedTextDelayed(text, elementId, delay) {
 
 let dragonsong = new Audio('dragonsong.mp3');
 let trolsong = new Audio('trolsong.mp3');
+let treasuresong = new Audio(`treasuresong.mp3`)
 
 function playDragonsong() {
   dragonsong.play();
@@ -53,6 +54,11 @@ function playDragonsong() {
 function playTrolsong() {
   dragonsong.pause(); // pause the dragonsong
   trolsong.play(); // start playing the trolsong
+}
+
+function playTreasureSong() {
+  trolsong.pause(); // pause the trolsong
+  treasuresong.play(); // start playing the treasuresong
 }
 
 // Functionality that displays the entered Teamname back to the user
@@ -66,10 +72,10 @@ function showTeamName() {
 
 function checkQuizYoN() {
   const correctAnswer = "yes"; 
-  const userInput = document.getElementById("userInput").value;
+  const userInput = document.getElementById("play-quiz").value;
   const messageElement = document.getElementById("quizMessage");
   
-  if (userInput.toLowerCase() != correctAnswer) {
+  if (userInput.toLowerCase() === correctAnswer) {
     messageElement.textContent = `Let's start the game!`;
     showQuiz();
   } else {
@@ -136,27 +142,12 @@ function checkQuizYoN() {
   const correctAnswer = "time";
   const userInput = document.getElementById("userInput").value;
   const messageElement = document.getElementById("riddleMessage");
-  playDragonsong();
     
   if (userInput.toLowerCase() === correctAnswer) {
+    playDragonsong();
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section8 = document.getElementById("section-8");
     section8.style.display = "block";
-  } else {
-    messageElement.textContent = "Sorry, that's incorrect. Please try again.";
-  }
-}
-
-function checkDragonAnswer() {
-  const correctAnswer = "smaug";
-  const userInput = document.getElementById("inputDragon").value;
-  const messageElement = document.getElementById("dragonMessage");
-  playTrolsong();
-    
-  if (userInput.toLowerCase() === correctAnswer) {
-    messageElement.textContent = `Congratulations, you answered correctly!`;
-    const section9 = document.getElementById("section-9");
-    section9.style.display = "block";
   } else {
     messageElement.textContent = "Sorry, that's incorrect. Please try again.";
   }
@@ -166,9 +157,9 @@ function checkRiddleAnswer() {
   const correctAnswer = "time";
   const userInput = document.getElementById("userInput").value;
   const messageElement = document.getElementById("riddleMessage");
-  playDragonsong();
     
   if (userInput.toLowerCase() === correctAnswer) {
+    playDragonsong();
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section8 = document.getElementById("section-8");
     section8.style.display = "block";
@@ -181,9 +172,9 @@ function checkDragonAnswer() {
   const correctAnswer = "smaug";
   const userInput = document.getElementById("inputDragon").value;
   const messageElement = document.getElementById("dragonMessage");
-  playTrolsong();
     
-  if (userInput === correctAnswer) {
+  if (userInput.toLowerCase() === correctAnswer) {
+    playTrolsong();
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section9 = document.getElementById("section-9");
     section9.style.display = "block";
@@ -201,6 +192,7 @@ function checkDragonAnswer() {
       messageElement.textContent = `Congratulations, you winners! Go get your Treasure!`;
       const section10 = document.getElementById("section-10");
       section10.style.display = "block";
+      playTreasureSong();
     } else {
       messageElement.textContent = "Sorry, that's incorrect. Please try again.";
     }
