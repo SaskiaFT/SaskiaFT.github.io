@@ -49,7 +49,7 @@ and the margins of the sections are reduced.-->
 							<form> 
 								<label for="team-name"><br><br>What would you like your Teamname to be?<br><br><br><br></label>
 								<input type="text" id="team-name" name="team-name">
-								<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName()">Submit</button>
+								<button class="submit-button" id="showTeamNamebtn" type="button" onclick="showTeamName(`team-name`, `showTeamNamebtn`)">Submit</button>
 							</form>
 							<br><br><div id="output"></div><br><br>
 						</div>
@@ -161,13 +161,13 @@ and the margins of the sections are reduced.-->
 
 						<script>
 							const songText = `Nicely done!\n We knew you would be awesome at this.\n
-							For you last quest move over the Great Hall.\n
-							In the Great Hall look closer at the....\n\n`
+							For your last quest move over the Great Hall.\n
+							In the Great Hall look closer at the bookcase..\n\n`
 							printDelayedTextDelayed(songText, "song-text" , 50);
 						</script>
 
 						<form> 
-							<label for="lyricsInput">Never gonna give you up<br>Never gonna let you down<br>Never gonna run around and desert you..<br><br>Fill in you final answer down below.</label><br><br><br>
+							<label for="lyricsInput">Do you know this song? Fill in you final answer down below.</label><br><br><br>
 							<input type="text" id="lyricsInput"><br><br>
 							<button class="submit-button" type="button" onclick="checkLyricsAnswer()">Submit</button><br><br><br>
 							<div id="lyricsMessage"></div><br><br>
