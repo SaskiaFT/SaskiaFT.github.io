@@ -43,27 +43,45 @@ function printDelayedTextDelayed(text, elementId, delay) {
   }, delay);
 }
 
-let dragonsong = new Audio('dragonsong.mp3');
-let trolsong = new Audio('trolsong.mp3');
-let treasuresong = new Audio(`treasuresong.mp3`)
-
-// let dragonsong = document.getElementById('dragonSong');
-// let trolsong = document.getElementById('trolSong');
-// let treasuresong = document.getElementById('treasureSong');
-
-function playDragonsong() {
-  dragonsong.play();
+//Plays soundfile, sounfile stops when other soundfile is playing
+function playDragonSong() {
+  var audio1 = document.getElementById("dragonSong");
+  var audio2 = document.getElementById("trolSong");
+  var audio3 = document.getElementById("treasureSong");
+  
+  audio2.pause();
+  audio3.pause();
+  
+  audio1.currentTime = 0;
+  audio1.play();
 }
 
-function playTrolsong() {
-  dragonsong.pause(); // pause the dragonsong
-  trolsong.play(); // start playing the trolsong
+//Plays soundfile, sounfile stops when other soundfile is playing
+function playTrolSong() {
+  var audio1 = document.getElementById("dragonSong");
+  var audio2 = document.getElementById("trolSong");
+  var audio3 = document.getElementById("treasureSong");
+  
+  audio1.pause();
+  audio3.pause();
+  
+  audio2.currentTime = 0;
+  audio2.play();
 }
 
+//Plays soundfile, sounfile stops when other soundfile is playing
 function playTreasureSong() {
-  trolsong.pause(); // pause the trolsong
-  treasuresong.play(); // start playing the treasuresong
+  var audio1 = document.getElementById("dragonSong");
+  var audio2 = document.getElementById("trolSong");
+  var audio3 = document.getElementById("treasureSong");
+  
+  audio1.pause();
+  audio2.pause();
+  
+  audio3.currentTime = 0;
+  audio3.play();
 }
+
 
 // Functionality that displays the entered Teamname back to the user
 function showTeamName() {
@@ -142,28 +160,13 @@ function checkQuizYoN() {
      }
   }
 
-  function checkRiddleAnswer() {
-  const correctAnswer = "time";
-  const userInput = document.getElementById("userInput").value;
-  const messageElement = document.getElementById("riddleMessage");
-    
-  if (userInput.toLowerCase() === correctAnswer) {
-    playDragonsong();
-    messageElement.textContent = `Congratulations, you answered correctly!`;
-    const section8 = document.getElementById("section-8");
-    section8.style.display = "block";
-  } else {
-    messageElement.textContent = "Sorry, that's incorrect. Please try again.";
-  }
-}
-
 function checkRiddleAnswer() {
   const correctAnswer = "time";
   const userInput = document.getElementById("userInput").value;
   const messageElement = document.getElementById("riddleMessage");
     
   if (userInput.toLowerCase() === correctAnswer) {
-    playDragonsong();
+    playDragonSong();
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section8 = document.getElementById("section-8");
     section8.style.display = "block";
@@ -178,7 +181,7 @@ function checkDragonAnswer() {
   const messageElement = document.getElementById("dragonMessage");
     
   if (userInput.toLowerCase() === correctAnswer) {
-    playTrolsong();
+    playTrolSong();
     messageElement.textContent = `Congratulations, you answered correctly!`;
     const section9 = document.getElementById("section-9");
     section9.style.display = "block";
